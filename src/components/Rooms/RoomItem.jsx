@@ -1,12 +1,10 @@
 import React from 'react';
 import {ListItem, Typography} from "@mui/material";
-import {useLocation} from "react-router-dom";
-import {StyledLink} from "../UI/StyledLink";
+import {StyledLink} from "../../UI/StyledLink";
 
-const RoomItem = ({title}) => {
-    const location = useLocation()
+const RoomItem = ({title, id}) => {
     return (
-        <StyledLink to={`/chat?room=${title}`}>
+        <StyledLink to={`/chat?room=${id}`}>
             <ListItem
                 sx={{
                     cursor: 'pointer',

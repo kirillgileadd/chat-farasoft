@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {useState} from "react";
-import {StyledPaper} from "../UI/StyledPaper";
+import {StyledPaper} from "../../UI/StyledPaper";
 import {TextField} from "@mui/material";
 
 const style = {

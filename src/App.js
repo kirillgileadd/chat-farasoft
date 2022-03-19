@@ -1,8 +1,8 @@
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import Join from "./components/Join";
-import Chat from "./components/Chat";
-import Rooms from "./components/Rooms";
+import Chat from "./components/Chat/Chat";
+import Rooms from "./components/Rooms/Rooms";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AuthActionCreators} from "./store/reducers/auth/action-creators";

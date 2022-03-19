@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {Navigate, Outlet, Route, Routes, useLocation} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import Join from "./Join";
-import Rooms from "./Rooms";
-import Chat from "./Chat";
+import Rooms from "./Rooms/Rooms";
+import Chat from "./Chat/Chat";
 import {AuthActionCreators} from "../store/reducers/auth/action-creators";
 
 const ProtectedRoute = ({isAuth, redirectPath = '/'}) => {

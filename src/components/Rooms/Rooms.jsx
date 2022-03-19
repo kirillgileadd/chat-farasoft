@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, List, ListItem, Typography} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
-import {StyledPaper} from "../UI/StyledPaper";
+import {StyledPaper} from "../../UI/StyledPaper";
 import CreateRoom from "./CreateRoom";
 import RoomItem from "./RoomItem";
 
@@ -43,15 +43,13 @@ const Rooms = () => {
                 {
                     rooms.map((room) => <RoomItem key={room.id} {...room}/>)
                 }
-
             </List>
             <Button
+                sx={{width: 'auto'}}
                 onClick={() => setModal(true)}
-                variant={'outlined'}
+                variant={'contained'}
             >
-                <Typography>
-                    Create a new room
-                </Typography>
+                    New room
                 <AddIcon/>
             </Button>
             <CreateRoom open={modal} setOpen={setModal} addNewRoom={addNewRoom}/>

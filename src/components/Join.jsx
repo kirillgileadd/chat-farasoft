@@ -51,6 +51,7 @@ const Join = ({isAuth}) => {
                         }
                     }}
                     component='form'
+                    onSubmit={login}
                 >
                     <TextField
                         type="text"
@@ -59,7 +60,7 @@ const Join = ({isAuth}) => {
                         onChange={(e) => setName(e.target.value)}
                     />
                         <Button
-                            onClick={login}
+                            type={'submit'}
                             variant={'contained'}
                         >
                             Connect
