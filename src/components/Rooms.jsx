@@ -5,7 +5,10 @@ import {StyledPaper} from "../UI/StyledPaper";
 import CreateRoom from "./CreateRoom";
 import RoomItem from "./RoomItem";
 
-const Rooms = ({rooms, setRooms}) => {
+const Rooms = () => {
+    const [rooms, setRooms] = useState([
+        {id: 1, title: 'react'}
+    ])
     const [modal, setModal] = useState(false)
 
     const addNewRoom = (title) => {
@@ -38,7 +41,7 @@ const Rooms = ({rooms, setRooms}) => {
                 }}
             >
                 {
-                    rooms.map((room) => <RoomItem {...room}/>)
+                    rooms.map((room) => <RoomItem key={room.id} {...room}/>)
                 }
 
             </List>

@@ -1,9 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Box, Button, TextField, Typography} from "@mui/material";
 import {StyledPaper} from "../UI/StyledPaper";
-import {StyledLink} from "../UI/StyledLink";
+import {useDispatch, useSelector} from "react-redux";
+import {Navigate, useNavigate} from 'react-router-dom'
+import {AuthActionCreators} from "../store/reducers/auth/action-creators";
 
-const Join = ({name, setName}) => {
+const Join = ({isAuth}) => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const {location} = useSelector(state => state.auth);
+    const [name, setName] = useState('')
+
+    const login = () => {
+        setUser()
+        navigate(location ? `${location?.pathname}${location?.search}` : '/rooms')
+    }
+
+    const setUser = () => {
+        if(name) {
+            dispatch(AuthActionCreators.setUser(name))
+        } else {
+            alert('Please enter name')
+        }
+    }
+    if (isAuth) {
+        return <Navigate to="/rooms" replace={true} />
+    }
+
     return (
         <StyledPaper>
             <Box
@@ -35,14 +58,12 @@ const Join = ({name, setName}) => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
-                    <StyledLink to={`/rooms?name=${name}`}
-                                onClick={(e) => !name ? e.preventDefault() : null}
-                    >
-                        <Button variant={'contained'}>
+                        <Button
+                            onClick={login}
+                            variant={'contained'}
+                        >
                             Connect
                         </Button>
-
-                    </StyledLink>
                 </Box>
             </Box>
         </StyledPaper>

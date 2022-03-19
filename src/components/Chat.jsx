@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Chat = ({locaton }) => {
+const Chat = () => {
     return (
         <div>
             Chat

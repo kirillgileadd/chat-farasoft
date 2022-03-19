@@ -6,7 +6,7 @@ import {StyledLink} from "../UI/StyledLink";
 const RoomItem = ({title}) => {
     const location = useLocation()
     return (
-        <StyledLink to={`/chat/${location.search}&room=${title}`}>
+        <StyledLink to={`/chat?room=${title}`}>
             <ListItem
                 sx={{
                     cursor: 'pointer',
