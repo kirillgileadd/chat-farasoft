@@ -45,3 +45,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #42c5f5;
+  height: 100vh;
+  width: 100vw;
+}
